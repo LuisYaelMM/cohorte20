@@ -1,0 +1,41 @@
+body{
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+label {
+  display: inline-block;
+  width: 80px;
+}
+
+input {
+  width: 200px;
+  border-color: red;
+}
+
+form{
+    margin-left: 0;
+}
+
+h2, label{
+    color:white;
+}
+
+hr{
+    border: none;
+    border-top: 2px dashed white;
+    width: 20%;
+    margin-left: 0;
+}
+#confirmar{
+    border-color: transparent;
+}
+
+#formulario{
+    padding:60px;
+    border-color: aqua;
+    border-radius:10px;
+    border-style: solid;
+    background-color: green;
+    width:305px;
+}

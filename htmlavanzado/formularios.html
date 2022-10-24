@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+    <link rel="stylesheet" href="assets/css/formularios.css" />
+  </head>
+  <body>
+    <!-- De tipo bloque -->
+    <h1>Formulario</h1>
+    <h1>Formulario</h1>
+    <h1>Formulario</h1>
+
+    <!-- De tipo linea -->
+
+    <form>
+      <div>
+        <label for="nombre">Nombre</label>
+        <input
+          class="campo"
+          type="text"
+          name="nombre"
+          id="nombre"
+          placeholder="Panchito"
+          required
+        />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input
+          class="campo"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="panchito@gmail.com"
+          required
+        />
+      </div>
+      <div>
+        <label for="password">Contraseña</label>
+        <input
+          class="campo"
+          type="password"
+          name="password"
+          id="password"
+          required
+          placeholder="1234"
+        />
+      </div>
+      <div>
+        <label for="">Recordarme</label>
+        <input type="checkbox" name="recordar" id="recordar" />
+      </div>
+
+      <input id= "btn" type="submit" value="Enviar" />
+    </form>
+    <!-- <input type="checkbox" name="" id="">
+    <input type="radio" name="" id="">
+    <input type="date" name="" id="">
+    <input type="color" name="" id="">
+    <textarea name="" id="" cols="30" rows="10"></textarea> -->
+  </body>
+</html>
