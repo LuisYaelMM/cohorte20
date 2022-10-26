@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.padre {
+  border: 3px dashed green;
+  height:800px;
+
+ /*  border-width: ;
+  border-top-width: ;
+  border-right-width: ;
+  border-bottom-width: ;
+  border-left-width: ;
+
+  border-style: ;
+  border-color: ; */
+}
+
+.cuadro {
+  border: 2px solid blue;
+  width: 200px;
+  height: 200px;
+ /*  display: inline-block; */
+}
+
+.uno {
+  background-color: blue;
+  /* position: relative; */
+  /* top, left, bottom, right */
+  /* top: -50px; */
+  /* right: 100px; */
+  /* left:-100px; */
+}
+
+.dos {
+  background-color: red;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.tres {
+  background-color: green;
+  position: sticky;
+  top:0;
+}
