@@ -81,11 +81,36 @@ const calcularPrecioTotal = (precio, porcentajeImpuestos) => {
 };
 console.log("El precio total es: " + calcularPrecioTotal(23.34, 16));
 
-let miObjeto={
-    nombre:"Juan",
-    edad: 20
+let miObjeto = {
+  nombre: "Juan",
+  edad: 20,
+  datos: function () {
+    let mensaje = "Eres: " + this.nombre;
+    mensaje += " tienes " + this.edad + " años";
+    console.log(mensaje);
+  },
 };
 
-let mensaje= "Tu nombre es "+ miObjeto.nombre;
-mensaje+=" tienes"+miObjeto["edad"]+" años";
-console.log(mensaje);
+miObjeto.datos();
+
+let constructor = function () {
+  let objPersona = {
+    nombre: "Juan",
+    nss: 2357,
+    datosPersona: function () {
+      let msj = "Eres " + this.nombre + " tu numero nss es " + this.nss;
+      console.log(msj);
+    },
+    otroMetodo: function (parametro) {
+      let numero = 8;
+      console.log("La suma es: " + (numero + parametro));
+    },
+  };
+  return objPersona;
+};
+
+
+
+let varObjReg = constructor();
+varObjReg.datosPersona();
+varObjReg.otroMetodo(5);
