@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulación del DOM</title>
+    <style>
+        .azul{
+            color:blue;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 id="etiqueta1" class="azul">---Ejemplo de DOM---</h1>
+    <p id="parrafo" class="azul">Saludos desde del DOM</p>
+    <p id="otro" class="azul">Soy otro párrafo</p>
+
+    <script>
+      let etiqueta = document.getElementById("etiqueta1");
+      console.log("Valor de etiqueta1" + etiqueta.innerHTML);
+      /* mostrando el tag p */
+      console.log(
+        "Valor del parrafo " + document.getElementById("parrafo").innerHTML
+      );
+
+      /* getElementByTagName */
+      let parrafos = document.getElementsByTagName("p");
+      console.log("No. de parrafos: " + parrafos.length);
+      for (let i = 0; i < parrafos.length; i++) {
+        /* console.log(parrafos[i].innerHTML); */
+        console.log(`No. parrafos: ${parrafos[i].innerHTML}`);
+      }
+      /* Recuperar elementos con clase con la funcion getElementByClassName */
+
+      let parrafosA = document.getElementsByClassName("azul");
+      console.log("No. de parrafos: " + parrafos.length);
+      for(let elemento of parrafosA){
+      /* for (let f = 0; f < parrafosA.length; f++) { */
+        /* console.log(parrafos[i].innerHTML); */
+        console.log(`No.  - parrafos: ${elemento.innerHTML}`);
+      }
+
+    </script>
+  </body>
+</html>
