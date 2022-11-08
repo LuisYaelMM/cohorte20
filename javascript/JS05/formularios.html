@@ -7,7 +7,7 @@
     <title>Formularios</title>
   </head>
   <body>
-    <h1>Datos personales</h1>
+    <!-- <h1>Datos personales</h1>
     <form id="formulario">
       Nombre <input type="text" name="nombre" value="Juan" /><br />
       Apellido <input type="text" name="apellido" value="Perez" />
@@ -22,6 +22,27 @@
           texto += elemento.value + "<br>";
         }
         document.getElementById("valores").innerHTML = texto;
+      }
+    </script> -->
+
+    <!-- Manejo de document.write -->
+    <!-- <h1>Ejemplo DOM document.write</h1>
+    <button onclick="cambio()">Mostrar</button>
+
+    <script>
+      function cambio() {
+        document.write("Saludo");
+      }
+    </script> -->
+
+    <h1>DOM imagenes</h1>
+    <button onclick="cambiar()">Cambio</button>
+    <br />
+    <img id="imagen" src="https://jarronegro.mx/imagenes/i_jn.png" alt="" />
+    <script>
+      function cambiar() {
+        document.getElementById("imagen").src =
+          "https://thumbs.dreamstime.com/b/jarro-negro-en-blanco-17943186.jpg";
       }
     </script>
   </body>
