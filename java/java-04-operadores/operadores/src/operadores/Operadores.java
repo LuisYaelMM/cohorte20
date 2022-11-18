@@ -67,13 +67,7 @@ public class Operadores {
 			valor = scanner.nextInt();
 			System.out.print("Introduce el segundo numero: ");
 			valor0 = scanner.nextInt();
-			System.out.println("Selecciona la opción a realizar:");
-			System.out.println("1: Suma");
-			System.out.println("2: Resta");
-			System.out.println("3: Multiplicacion");
-			System.out.println("4: Division");
-			System.out.println("5: Residuo");
-			System.out.println("6: Salir");
+			
 			menu = scanner.nextInt();
 			switch (menu) {
 			case 1: {
