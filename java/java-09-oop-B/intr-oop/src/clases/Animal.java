@@ -5,19 +5,37 @@ public class Animal {
 	private String nombre;
 	private int edad;
 	
-	public Animal(String nuevoNombre){
-		nombre=nuevoNombre;
+	public Animal() {
 	}
-	
-	public void setEdad(int nuevaEdad) {
-		edad=nuevaEdad;
+
+	public Animal(String nombre) {
+		this.nombre = nombre;
 	}
-	
-	public int getEdad() {
-		return edad;
+
+	public String getRaza() {
+		return raza;
 	}
-	
+
+	public void setRaza(String raza) {
+		this.raza = raza;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
+	
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+	
+	
 }
