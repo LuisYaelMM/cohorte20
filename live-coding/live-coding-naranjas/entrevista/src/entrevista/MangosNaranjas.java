@@ -17,6 +17,11 @@ public class MangosNaranjas {
 		System.out.println("Cada caja tiene " + numeroMangos + " mangos");
 		System.out.println("Cada caja tiene " + numeroNaranjas + " naranjas");
 	}
+	
+	public int cajas() {
+		
+		return 0;
+	}
 
 	public static double maximoComunDivisor(double mangos, double naranjas) {
 		if (naranjas == 0)
