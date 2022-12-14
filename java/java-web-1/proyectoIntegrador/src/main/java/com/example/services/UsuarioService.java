@@ -1,4 +1,4 @@
-package com.example.demo.appdb.services;
+package com.example.services;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -6,9 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.appdb.models.UsuarioModel;
-import com.example.demo.appdb.repositories.UsuarioRepository;
-
+import com.example.models.UsuarioModel;
+import com.example.repositories.UsuarioRepository;
 
 @Service
 public class UsuarioService {
@@ -22,25 +21,21 @@ public class UsuarioService {
 		return usuarioRepositorio.save(usuario);
 	}
 	
-	public ArrayList<UsuarioModel> obtenerPorPrioridad(Integer prioridad) {
-		return usuarioRepositorio.findByPrioridad(prioridad);
-	}
-	
-	public Optional<UsuarioModel> obtenerPorId(Long id){
+	public Optional<UsuarioModel> obtenerPorId(Integer id){
 		return usuarioRepositorio.findById(id);
 	}
 	
-	public boolean eliminarUsuario(Long id) {
-		try {
-			usuarioRepositorio.deleteById(id);
-			return true;
-			
-		} catch (Exception e) {
-			return false;
-		}
+	public ArrayList<UsuarioModel> obtenerPorCorreo(String correo){
+		return usuarioRepositorio.findByPassword(correo);
 	}
 	
-	public boolean eliminarPorId(Long id) {
+	public ArrayList<UsuarioModel> obtenerPorPassword(String password){
+		return usuarioRepositorio.findByPassword(password);
+	}
+	
+	
+	
+	public boolean eliminarPorId(Integer id) {
 		if (usuarioRepositorio.findById(id).isPresent()) {
 			usuarioRepositorio.deleteById(id);
 			return true;
@@ -48,4 +43,7 @@ public class UsuarioService {
 			return false;
 		}
 	}
+	
+	
+	
 }
