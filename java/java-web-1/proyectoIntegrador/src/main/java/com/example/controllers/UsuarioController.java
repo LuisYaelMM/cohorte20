@@ -10,7 +10,7 @@ import com.example.models.UsuarioModel;
 import com.example.services.UsuarioService;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 	@Autowired
 	UsuarioService usuarioServicio;
@@ -30,10 +30,10 @@ public class UsuarioController {
 		return this.usuarioServicio.obtenerPorCorreo(correo);
 	}
 	
-	@GetMapping("/query")
+	/*@GetMapping("/query")
 	public ArrayList<UsuarioModel> obtenerUsuarioPorPassword(@RequestParam("prioridad") String password) {
 		return this.usuarioServicio.obtenerPorPassword(password);
-	}
+	}*/
 	
 	@GetMapping(path = "/{id}")
 	public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Integer id) {

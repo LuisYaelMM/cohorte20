@@ -1,10 +1,13 @@
 package com.example.models;
 
+import java.util.ArrayList;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,6 +21,9 @@ public class UsuarioModel {
 	private String password;
 	private String nombre_completo;
 	
+	/*----------Empiezan Relaciones--------*/
+	@OneToMany(mappedBy="usuario")//es un usuario con muchas ordenes
+	private ArrayList<OrdenModel> ordenes;
 	
 	
 	
@@ -26,13 +32,20 @@ public class UsuarioModel {
 	public UsuarioModel() {
 	}
 	
-	public UsuarioModel(Integer id, String correo, String password, String nombre_completo) {
+	
+	
+	public UsuarioModel(Integer id, String correo, String password, String nombre_completo,
+			ArrayList<OrdenModel> ordenes) {
+		super();
 		this.id = id;
 		this.correo = correo;
 		this.password = password;
 		this.nombre_completo = nombre_completo;
+		this.ordenes = ordenes;
 	}
-	
+
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -57,6 +70,15 @@ public class UsuarioModel {
 	public void setNombre_completo(String nombre_completo) {
 		this.nombre_completo = nombre_completo;
 	}
+
+	public ArrayList<OrdenModel> getOrdenes() {
+		return ordenes;
+	}
+
+	public void setOrdenes(ArrayList<OrdenModel> ordenes) {
+		this.ordenes = ordenes;
+	}
+	
 	
 	
 	
