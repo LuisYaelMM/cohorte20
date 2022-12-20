@@ -22,8 +22,8 @@ public class UsuarioModel {
 	private String nombre_completo;
 	
 	/*----------Empiezan Relaciones--------*/
-	@OneToMany(mappedBy="usuario")//es un usuario con muchas ordenes
-	private ArrayList<OrdenModel> ordenes;
+//	@OneToMany(mappedBy="usuario")//es un usuario con muchas ordenes
+//	private ArrayList<OrdenModel> ordenes;
 	
 	
 	
@@ -41,7 +41,7 @@ public class UsuarioModel {
 		this.correo = correo;
 		this.password = password;
 		this.nombre_completo = nombre_completo;
-		this.ordenes = ordenes;
+		//this.ordenes = ordenes;
 	}
 
 
@@ -71,13 +71,13 @@ public class UsuarioModel {
 		this.nombre_completo = nombre_completo;
 	}
 
-	public ArrayList<OrdenModel> getOrdenes() {
-		return ordenes;
-	}
-
-	public void setOrdenes(ArrayList<OrdenModel> ordenes) {
-		this.ordenes = ordenes;
-	}
+//	public ArrayList<OrdenModel> getOrdenes() {
+//		return ordenes;
+//	}
+//
+//	public void setOrdenes(ArrayList<OrdenModel> ordenes) {
+//		this.ordenes = ordenes;
+//	}
 	
 	
 	
