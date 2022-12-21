@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\Luis\Desktop\cohorte20\logica-programacion-8\.metadata\.plugins\org.eclipse.jdt.core
