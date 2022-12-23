@@ -20,7 +20,7 @@ function desplegarFiltro(filtro) {
       box.classList = "card m-4 shadow";
       box.innerHTML = `
     
-    <a href="#">
+    <a href="#" onclick="agregarCarrito(${element.id})">
     <img
     src="${element.imagen_frontal}"
     class="card-img-top"
@@ -44,7 +44,7 @@ function desplegar() {
     box.classList = "card m-4 shadow";
     box.innerHTML = `
     
-    <a href="#" onclick="agregarCarrito(${index + 1})">
+    <a href="#" onclick="agregarCarrito(${element.id})">
     <img
     src="${element.imagen_frontal}"
     class="card-img-top"

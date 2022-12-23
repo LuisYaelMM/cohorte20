@@ -119,10 +119,7 @@ function fetchActivo(){
 						console.error("Error:", error);
 					});
 			});
-		}else{
-			alert("Favor de iniciar sesión");
-		}
-		
+		}	
 	})
 	.catch((e) => {
 		console.log(e);
