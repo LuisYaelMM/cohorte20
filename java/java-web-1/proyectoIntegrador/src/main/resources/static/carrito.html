@@ -325,24 +325,43 @@
       </nav>
     </div>
 <!-- Artículos -->
-
 <!-- Alinear Título para iniciar junto a carrito -->
 <div class="container text-left">
   <div class="row align-items-start">
     <!-- Columna principal -->
     <h1 class="col-8"> Tu carrito </h1>
-            <div class="col-8">
+            <div class="col-8" id="carrito_despliegue">
               <!-- Producto 1 -->
               <div class="card mb-3" style="max-height: auto;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="https://www.suplementosmexico.com.mx/2025-superlarge_default/ak47-for-her-ak47-for-her-preentreno-y-quemador-de-army-nutrition.jpg"
-                     class="img-fluid rounded-start" alt="Suplemento">
+                    <!-- El siguiente id cambia  -->
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <!-- Primer Imagen de producto 1 -->
+                          <img src="https://www.suplementosmexico.com.mx/2025-superlarge_default/ak47-for-her-ak47-for-her-preentreno-y-quemador-de-army-nutrition.jpg"
+                          class="img-fluid rounded-start" alt="Suplemento">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/CrearCuenta.jpg" 
+                          class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">Nombre del suplemento</h5>
-                      <p class="card-text">Breve descripción</p>
+                      <h5 class="card-title">Precio</h5>
+                      <p class="card-text"></p>
                     </div>
                   </div>
                 </div>
@@ -350,8 +369,28 @@
               <div class="card mb-3" style="max-height: auto;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="https://www.suplementosmexico.com.mx/2025-superlarge_default/ak47-for-her-ak47-for-her-preentreno-y-quemador-de-army-nutrition.jpg"
-                     class="img-fluid rounded-start" alt="Suplemento">
+                    <!-- El siguien id permite hacer los cambios -->
+                    <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <!-- Primer Imagen de producto 1 -->
+                          <img src="https://www.suplementosmexico.com.mx/2025-superlarge_default/ak47-for-her-ak47-for-her-preentreno-y-quemador-de-army-nutrition.jpg"
+                          class="img-fluid rounded-start" alt="Suplemento">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/CrearCuenta.jpg" 
+                          class="img-fluid rounded-start" alt="Suplemento">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -364,17 +403,21 @@
             </div>
 <!-- Columna lateral -->
             <aside class="card col-4 mb-3" style="max-height: auto;">
-                <h2 class="cant">Cantidad: </h2>
-                <h3>Subtotal: </h3>
-                <h3>IVA:</h3>
-                <h3 class="cant">Costo de Envío: </h3>
-                <h3>Envío:</h3>
+                <h2 class="cant">Cantidad:</span></h2>
+                <h3>Subtotal: <span id="precio_total"></span></h3>
+                <h3>IVA: <span id="precio_iva"></span></h3>
+                <h3 class="cant">Costo de Envío: <span id="precio_envio"></span></h3>
                 
+                <label1 for="exampleInputEmail1" class="form-label" id="direc">Dirección </label1>
+                <input type="text" class="form-control mensajge" id="calle" aria-describedby="emailHelp" placeholder="Calle " >
+                <input type="text" class="form-control mensajge" id="colonia" aria-describedby="emailHelp" placeholder="Colonia" >
+                <input type="text" class="form-control mensajge" id="estado" aria-describedby="emailHelp" placeholder=" Estado" >
+                <div id="mensajeHelp" class="form-text"></div>
             </aside>
 <!-- Cantidad a Pagar  -->
             <div class="offset-md-8 pay">
                 <div class="col-12">
-                    <h3>Total a pagar: $5000</h3>
+                    <h3>Total a pagar: <span id="precio_final"></span></h3>
                 </div>
             </aside>
         </div>
@@ -384,10 +427,10 @@
       <div class="container boton">
         <div class="row">
           <div class="text-center col-8">
-            <button type="button" class="btn btn-primary btn-lg">Agregar más productos</button>
+            <a href="productos.html"><button type="button" class="btn btn-primary btn-lg">Agregar más productos</button></a>
           </div>
           <div class="text-left col-4">
-            <button type="submit" class="btn btn-danger btn-lg">Comprar ahora</button>
+            <button type="submit" class="btn btn-danger btn-lg" onclick="enviarOrden()">Comprar ahora</button>
           </div>
         </div>
       </div>
@@ -430,5 +473,6 @@
       crossorigin="anonymous"
     
     ></script>
+    <script src="assets/js/carrito.js"></script>
   </body>
 </html>

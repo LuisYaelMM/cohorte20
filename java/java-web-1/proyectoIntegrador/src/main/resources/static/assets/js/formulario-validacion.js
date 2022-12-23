@@ -5,6 +5,20 @@ const passDos = document.getElementById("passDos");
 const form = document.getElementById("form");
 const parrafo = document.getElementById("warnings");
 
+let repetido = false;
+let arregloUsuarios;
+fetch("http://localhost:8080/usuarios")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    arregloUsuarios = data;
+    console.log(arregloUsuarios);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let warnings = "";
@@ -30,27 +44,42 @@ form.addEventListener("submit", (e) => {
   if (entrar) {
     parrafo.innerHTML = warnings;
   } else {
-    let data={
-        "correo":`${email.value}`,
-        "nombre_completo":`${nombre.value}`,
-        "pass":`${pass.value}`
+    let data = {
+      correo: `${email.value}`,
+      nombre_completo: `${nombre.value}`,
+      password: `${pass.value}`,
+    };
+    let correoExistente;
+    let correoEntrante;
+
+    for (let index = 0; index < arregloUsuarios.length; index++) {
+      correoExistente = arregloUsuarios[index].correo;
+      correoEntrante = email.value;
+      if (correoExistente == correoEntrante) {
+        repetido = true;
+        break;
+      }
     }
 
-    fetch("http://localhost:8080/usuarios", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
+    if (repetido) {
+      parrafo.innerHTML = "El correo electronico ya está registrado";
+    } else {
+      fetch("http://localhost:8080/usuarios", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-    console.log(data);
-    parrafo.innerHTML = "Enviado";
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      window.location.href = "sucessregister.html";
+      parrafo.innerHTML = "Enviado";
+    }
   }
 });
