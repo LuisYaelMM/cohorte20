@@ -97,28 +97,32 @@ function fetchActivo(){
 		console.log(usuarioActivo[0].id_usuario);
 	})
 	.then(()=>{
-		arregloCarrito.forEach((element) => {
-			let orden = new Object();
-			orden.direccion = direccion;
-			orden.id_producto = element.id_producto;
-			orden.id_usuario = usuarioActivo[0].id_usuario;
-			orden.precio_final = precioFinal;
-			console.log(orden);
-			fetch("http://localhost:8080/ordenes", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(orden),
-			})
-				.then((response) => response.json())
-				.then((data) => {
-					console.log("Success:", data);
+		if (!Object.keys(usuarioActivo).length===0) {
+			arregloCarrito.forEach((element) => {
+				let orden = new Object();
+				orden.direccion = direccion;
+				orden.id_producto = element.id_producto;
+				orden.id_usuario = usuarioActivo[0].id_usuario;
+				orden.precio_final = precioFinal;
+				fetch("http://localhost:8080/ordenes", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(orden),
 				})
-				.catch((error) => {
-					console.error("Error:", error);
-				});
-		});
+					.then((response) => response.json())
+					.then((data) => {
+						console.log("Success:", data);
+					})
+					.catch((error) => {
+						console.error("Error:", error);
+					});
+			});
+		}else{
+			alert("Favor de iniciar sesión");
+		}
+		
 	})
 	.catch((e) => {
 		console.log(e);
