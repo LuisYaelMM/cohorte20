@@ -144,5 +144,5 @@ function enviarOrden() {
 		.then((res) => res.text()) // or res.json()
 		.then((res) => console.log(res));
 	alert("Orden colocada\n¡Gracias por comprar en Royal Bear!")
-	//window.location.href = "http://localhost:8080/carrito.html"
+	window.location.href = "http://localhost:8080/carrito.html"
 }
